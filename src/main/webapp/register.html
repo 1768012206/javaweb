@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register</title>
+<meta charset="utf-8">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+
+body {
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-image: url("xue.jpg");
+}
+
+ul {
+	list-style: none;
+	align-content: center;
+	margin-left: 45%;
+	height: 25px;
+}
+
+li {
+	float: left;
+}
+
+a {
+	text-decoration: none;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	width: 100px;
+	background-color: #ffff00;
+	margin-bottom: 1px;
+	text-indent: 10px;
+	text-align: center;
+}
+
+a:hover {
+	background-color: #ff9900;
+	color: #fff;
+}
+
+div {
+	position: absolute;
+}
+
+form {
+	margin-left: 45%;
+}
+</style>
+<script type="text/javascript">
+	function judge() {
+		var pwd = document.getElementById("pwd").value;
+		var confirmPwd = document.getElementById("confirmPwd").value;
+		if (pwd != confirmPwd) {
+			alert("两次密码输入不同！")
+			return false;
+		} else {
+			return true;
+		}
+	}
+</script>
+</head>
+<body>
+	<ul>
+		<li><a href="#">请您注册</a></li>
+	</ul>
+	<br />
+	<form action="/web/register.do" method="post">
+		<input name="userName" type="text" placeholder="账户名" required><br>
+		<br> <input name="pwd" id="pwd" type="password" placeholder="密码" required><br>
+		<br> <input name="confirmPwd" id="confirmPwd" type="password" placeholder="确认密码"
+			required><br> <br> 老师：<input name="radio"
+			type="radio" value="老师" required> 学生：<input name="radio"
+			type="radio" value="学生" required><br> <br> <input
+			type="submit" value="注册" onclick="return judge()">
+	</form>
+	<br>
+	<div style="margin-left: 45%; background-color: grey;">请仔细填写以上注册信息！</div>
+</body>
+</html>
