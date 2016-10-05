@@ -32,13 +32,11 @@ public class VideoController {
 		if (!file.isEmpty()) {
 			String contenttype = file.getContentType();
 			String type[] = contenttype.split("/");
-			System.out.println(type[1]);
 			if (type[1].equals("mp4") || type[1].equals("MP4") || type[1].equals("flv") || type[1].equals("pdf")) {
 				try {
 					req.setCharacterEncoding("utf-8");
 					String filename = new String(file.getOriginalFilename().getBytes(), "UTF-8");
 					String path = req.getServletContext().getRealPath("/");
-					System.out.println(path);
 					ListVideoService lvs = new ListVideoServiceImpl();
 					List<Video> videolist = lvs.getAllVideo();
 					int id = videolist.size();
