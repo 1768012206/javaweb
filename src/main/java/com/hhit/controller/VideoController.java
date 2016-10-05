@@ -2,10 +2,8 @@ package com.hhit.controller;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.util.List;
 
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.hhit.dao.VideoDao;
 import com.hhit.pojo.Video;
 import com.hhit.service.ListVideoService;
 import com.hhit.service.UploadService;
@@ -43,7 +40,7 @@ public class VideoController {
 					file.transferTo(new File(path + filename));
 					us.saveToDataBase(id, filename, path);
 					resp.getWriter().write("success");
-				} catch (IllegalStateException | IOException e) {
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			} else {
@@ -64,7 +61,7 @@ public class VideoController {
 		req.setAttribute("videolist", videolist);
 		try {
 			req.getRequestDispatcher("media_list.jsp").forward(req, resp);
-		} catch (ServletException | IOException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

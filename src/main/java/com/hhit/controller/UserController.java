@@ -4,10 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.io.Writer;
-import java.util.List;
 
-import javax.annotation.Resource;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,13 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hhit.pojo.User;
-import com.hhit.pojo.Video;
 import com.hhit.service.ListUserService;
-import com.hhit.service.ListVideoService;
 import com.hhit.service.LoginService;
 import com.hhit.service.RegisterService;
 import com.hhit.service.impl.ListUserServiceImpl;
-import com.hhit.service.impl.ListVideoServiceImpl;
 import com.hhit.service.impl.LoginServiceImpl;
 import com.hhit.service.impl.RegisterServiceImpl;
 

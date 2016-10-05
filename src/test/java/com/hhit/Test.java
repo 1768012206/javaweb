@@ -2,12 +2,7 @@ package com.hhit;
 
 import java.util.List;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.hhit.dao.UserDao;
-import com.hhit.pojo.User;
 import com.hhit.pojo.Video;
 import com.hhit.service.ListVideoService;
 import com.hhit.service.impl.ListVideoServiceImpl;
